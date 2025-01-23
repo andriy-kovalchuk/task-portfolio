@@ -11,6 +11,6 @@ public class MainPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "(//*[@id='collaboratively_reconceptualize-on']//a[@data-testid='log-in'])[2]")
+    @FindBy(xpath = "//*[@id=\"collaboratively_reconceptualize-off\"]/div/div/header[2]/div/nav/ul[2]/li[1]/a")
     public WebElement loginButton;
 }

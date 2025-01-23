@@ -1,5 +1,6 @@
 Feature: User should be able to login and see correct portfolio balance
 
+  @tc1
   Scenario: User should be able to login with valid data and verify correct total portfolio value
     Given user is on the main page
     When user clicks LogIn button on the main page
