@@ -11,7 +11,7 @@ public class AccountPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(css = "div[class='flex items-baseline'] span[class*='text-ds-primary']")
+    @FindBy(css = "div[class='flex items-baseline'] div[style*='display: block']")
     public WebElement portfolioBalanceValue;
 
 }

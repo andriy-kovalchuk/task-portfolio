@@ -10,25 +10,25 @@ public class BrowserUtils {
      * reusable browser utilities methods; already solved for synchronization issues
      * */
 
-    public static void goTo(String url){
+    private static final WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 60);
+
+    public static void navigateTo(String url){
         Driver.getDriver().get(url);
+        wait.until(ExpectedConditions.urlMatches(url));
     }
 
     public static void clickElement(WebElement webElement){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 60);
-        wait.until(ExpectedConditions.visibilityOf(webElement));
+        wait.until(ExpectedConditions.elementToBeClickable(webElement));
         webElement.click();
     }
 
     public static void enterText(WebElement webElement, String textToEnter){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 60);
-        wait.until(ExpectedConditions.visibilityOf(webElement));
+        wait.until(ExpectedConditions.elementToBeClickable(webElement));
         webElement.clear();
         webElement.sendKeys(textToEnter);
     }
 
     public static String getElementsText(WebElement webElement){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 60);
         wait.until(ExpectedConditions.visibilityOf(webElement));
         return webElement.getText();
     }
