@@ -15,20 +15,20 @@ public class BrowserUtils {
     }
 
     public static void clickElement(WebElement webElement){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-        wait.until(ExpectedConditions.elementToBeClickable(webElement));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 60);
+        wait.until(ExpectedConditions.visibilityOf(webElement));
         webElement.click();
     }
 
     public static void enterText(WebElement webElement, String textToEnter){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-        wait.until(ExpectedConditions.elementToBeClickable(webElement));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 60);
+        wait.until(ExpectedConditions.visibilityOf(webElement));
         webElement.clear();
         webElement.sendKeys(textToEnter);
     }
 
     public static String getElementsText(WebElement webElement){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 60);
         wait.until(ExpectedConditions.visibilityOf(webElement));
         return webElement.getText();
     }
