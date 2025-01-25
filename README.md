@@ -81,7 +81,7 @@ The main test logic is implemented in the following class:
 
 ---
 ## **Final notes:**
-- This solution will not work if 2FA is enabled for the account.
+- It's best for the account under test to have 2FA disabled, otherwise it has to be entered manually. The solution does not have access to 2FA and email.
 - During testing, I encountered an issue where the system did not recognize the device after logging in, prompting an email confirmation. I had to manually approve the device via email to be able to proceed to portfolio page.
 - I've implemented a 60-second wait for the next web element to be located before test fails.
 - It's recommended that whoever runs this test ensures that email step is disabled internally or bypassed in the QA environment. However, when automating in the production environment, I was unable to bypass this step.
